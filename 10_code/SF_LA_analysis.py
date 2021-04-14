@@ -1,4 +1,5 @@
 import pandas as pd 
+import numpy as np
 import datetime
 
 ###### read in data ###### 
@@ -59,4 +60,12 @@ LA_pop = pop.loc[pop["Geographic Area"] == "Los Angeles County, California"]
 
 daily_sf_timed["cases"] = daily_sf_timed["cases"] / SF_pop[2019].values[0] * 100000
 daily_la_timed["cases"] = daily_la_timed["cases"] / LA_pop[2019].values[0] * 100000
+sf = np.datetime64(sf_policy)
+la = np.datetime64(la_policy)
+daily_sf_timed["standardized_date"] = (daily_sf_timed["date"] - sf)
+daily_la_timed["standardized_date"] = (daily_la_timed["date"] - la)
 
+
+
+daily_sf_timed.to_csv("../20_intermediate_files/SF_data.csv")
+daily_la_timed.to_csv("../20_intermediate_files/LA_data.csv")
