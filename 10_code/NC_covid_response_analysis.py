@@ -34,4 +34,4 @@ daily_wake["date"] = pd.to_datetime(daily_wake["date"])
 daily_wake_timed = daily_wake.loc[daily_wake["date"].isin(date_list)]
 
 # covering a total of 29 days (14 + 1 + 1)
-daily_meck_timed
+daily_wake_timed
