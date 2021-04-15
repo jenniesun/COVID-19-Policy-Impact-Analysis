@@ -47,4 +47,5 @@ def diff_in_diff_plot(df_treatment, df_control):
     return plot
 
 
-diff_in_diff_plot(sf_df, la_df)
+graph = diff_in_diff_plot(sf_df, la_df)
+graph.save('CA_diff.pdf', height=6, width=12)
