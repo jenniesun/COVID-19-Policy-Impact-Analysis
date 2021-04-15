@@ -18,7 +18,7 @@ la_df["standardized_date"] = la_df["standardized_date"].str.replace(' days','', 
 # # Diff in Diff Plot
 def diff_in_diff_plot(df_treatment, df_control):
     
-    treatment_state = str(list(df_treatment.county.unique())[0])
+    treatment_state = str(list(df_treatment.state.unique())[0])
     
  
     lower_lim = df_treatment['standardized_date'].min()
@@ -37,9 +37,10 @@ def diff_in_diff_plot(df_treatment, df_control):
     geom_smooth(df_control[df_control['standardized_date'] >= 0], 
                 aes(x='standardized_date', y='cases', color='county'))
     + geom_vline(xintercept = 0) 
-    + xlab('Years before/after Policy Implementation Year: ' + '. \nRepresented as "0" on the x-axis.') 
-    + ylab(' \n(Adding 95% confidence interval)')
+    + xlab('Days before/after Policy Implementation: ' + '. \nRepresented as "0" on the x-axis.') 
+    + ylab(' \n number of Covid cases per 10,000')
     + scale_x_continuous(breaks=range(lower_lim,upper_lim,1))
+    + theme(figure_size=(12, 6))
     + labs(title=str("Difference in Difference Plot - "+treatment_state))
         
     )
