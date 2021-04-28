@@ -75,8 +75,12 @@ daily_tx_total = daily_tx_timed.groupby(by=["date"]).sum()["cases"]
 control_cases =daily_fl_total.add(daily_nv_total, fill_value = 0)
 control_cases = control_cases.add(daily_tx_total, fill_value = 0)
 
-
 daily_ca_total= daily_ca_total / CA_pop * 100000
+daily_fl_std = daily_fl_total / FL_pop  * 100000
+daily_nv_std = daily_nv_total / NV_pop  * 100000
+daily_tx_std = daily_tx_total / TX_pop  * 100000
+
+
 daily_control_total= control_cases / control_pop * 100000
 
 
@@ -90,3 +94,10 @@ daily_control_total= control_cases / control_pop * 100000
 
 daily_ca_total.to_csv("../20_intermediate_files/CA_state_level.csv")
 daily_control_total.to_csv("../20_intermediate_files/CA_controls.csv")
+daily_fl_std.to_csv("../20_intermediate_files/Florida.csv")
+daily_nv_std.to_csv("../20_intermediate_files/Nevada.csv")
+daily_tx_std.to_csv("../20_intermediate_files/Texas.csv")
+
+
+
+
