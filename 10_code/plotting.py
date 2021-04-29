@@ -96,6 +96,6 @@ graph_sep = diff_in_diff_plot_sep(ca_df, florida_df, nevada_df, texas_df)
 
 
 
-graph.save('../20_intermediate_files/CA_diff.pdf', height=6, width=12)
-graph_sep.save('../20_intermediate_files/CA_diff_sep.pdf', height=6, width=12)
+graph.save('../20_intermediate_files/CA_diff.png', height=6, width=12)
+graph_sep.save('../20_intermediate_files/CA_diff_sep.png', height=6, width=12)
 
