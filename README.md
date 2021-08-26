@@ -19,7 +19,7 @@ Population data is from the US Census Bureau, which can be found here [link](htt
 #### Unit of Observation
 
 Below is an example of how each row in our final dataset looks like:
-![](UnitOfObservation.png) \
+![](UnitOfObservation.png) 
 
 ## Example Result
 
